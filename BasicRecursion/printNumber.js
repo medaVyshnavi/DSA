@@ -1,3 +1,41 @@
+function isPalindromeRecursion(arr, i, j) {
+  if (i >= j) return true // base check imp
+  if (arr[i] !== arr[j]) return false;
+  return isPalindromeRecursion(arr, i + 1, j - 1);
+}
+const str = "abcdef";
+console.log(reverseArray(Array.from(str),0, str.length-1));
+
+function isPalindrome(str) {
+  str = Array.from(str);
+  let i = 0; 
+  let j = str.length-1;
+
+  while (i < j) {
+    if (str[i] !== str[j]) {
+      return false
+    }
+    i++;
+    j--
+  }
+  return true
+}
+console.log(isPalindrome("abcdef"));
+
+/**********************************************************/
+
+function reverseArrayRecursion(arr, start, end) {
+  if (start < end) {
+    [arr[start], arr[end]] = [arr[end], arr[start]];
+    return reverseArrayRecursion(arr,start + 1, end -1)
+  }
+  return arr
+}
+const arr = [90, 95, 100, 105, 110, 115, 120];
+console.log(reverseArrayRecursion(arr,0,arr.length-1))
+
+/**********************************************************/
+
 function reverseArrayTwoPointer(arr) {
   let i = 0;
   let j = arr.length - 1;
